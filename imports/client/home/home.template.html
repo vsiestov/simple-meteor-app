@@ -1,0 +1,15 @@
+<button ng-click="home.logout()">Logout</button>
+<h2>Home</h2>
+<h3>Messages</h3>
+<ul>
+    <li ng-repeat="item in home.list | orderBy: 'createdAt'">
+        <span>{{ item.text }}</span>
+        <button ng-click="home.deleteMessage(item)">Delete</button>
+    </li>
+</ul>
+
+<form ng-submit="home.addMessage(home.message)">
+    <input type="text" name="message" ng-model="home.message">
+
+    <button type="submit">Submit</button>
+</form>
